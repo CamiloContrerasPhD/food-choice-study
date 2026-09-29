@@ -3322,6 +3322,7 @@ async function submitData() {
     ...collectBehaviorFields(),
   };
 
+  if (!state.participantId) state.participantId = generateUUID();
   const code = state.participantId.slice(-6).toUpperCase();
 
   if (!SHEETS_URL) {
